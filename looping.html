@@ -10,22 +10,60 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            margin: 0;
+            font-family: Arial, sans-serif;
             background-color: #6E6E6D;
             color: #FAD0C9;
+            line-height: 1.6;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FFFFFF;
+            padding: 0 30px;
+            height: 100px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #6E6E6D;
+            padding: 10px 25px;
+            background-color: #FAD0C9;
+            clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6E6E6D;
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: #FAD0C9;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 3em;
+            margin-top: 50px;
             color: #FAD0C9;
         }
 
@@ -36,6 +74,7 @@
             width: 80%;
             max-width: 500px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            
         }
 
         input {
@@ -51,7 +90,7 @@
             box-sizing: border-box;
         }
 
-        button {
+        button, .theme-button {
             padding: 12px 20px;
             font-size: 1.2em;
             border: none;
@@ -61,9 +100,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
         }
 
-        button:hover {
+        button:hover, .theme-button:hover {
             background-color: #FAD0C9;
             color: #6E6E6D;
         }
@@ -85,10 +127,16 @@
         .result p {
             margin: 5px 0;
         }
-
     </style>
 </head>
 <body>
+
+    <header class="navbar">
+        <div class="logo">ITC</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </header>
     <h1>Factorial, Sum, and Average Calculator</h1>
 
     <div class="container">
@@ -133,5 +181,6 @@
             document.getElementById('resultContainer').style.display = 'block';
         }
     </script>
+
 </body>
 </html>
