@@ -3,20 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Navbar Example</title>
+    <title>Navigation Bar with Rubrix</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="navbar">
-        <a href="#" class="logo">LearnWithUs</a>
-        <div class="links">
-            <a href="#home">Home</a>
-            <a href="#lessons">Lessons</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </div>
-
-    <div class="content">
-        <h1>Welcome, Student!</h1>
-        <p>Explore the basics of HTML and CSS with this example project.</
+    <header class="navbar">
+        <div class="logo">ITC</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Assignments </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Conversion</a></li>
+                        <li><a href="#">Income Tax Calculator</a></li>
+                        <li><a href="#">Looping</a></li>
+                        <li><a href="#">Payroll</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="description">
+        <h1>CS 1130 - Introduction to Computing</h1>
+        <p>This project demonstrates multiple programming concepts, including conversion calculators, income tax computation, loops, and payroll management, all styled for responsiveness and ease of use.</p>
+    </section>
+    
+    <section class="rubrix">
+        <h2>WEB PROJECT Grade RUBRIX</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Program Component</th>
+                    <th>Accuracy</th>
+                    <th>Coding Style (Javascript)</th>
+                    <th>Grade Composition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1. Conversion</td>
+                    <td>50%</td>
+                    <td>50%</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>2. Income Tax Calculator</td>
+                    <td>50%</td>
+                    <td>50%</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>3. Looping</td>
+                    <td>50%</td>
+                    <td>50%</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>4. Payroll</td>
+                    <td>50%</td>
+                    <td>50%</td>
+                    <td>25%</td>
+                </tr>
+                <tr>
+                    <td>5. Overall Styling (Responsive)</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>30%</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #6E6E6D;
+            color: #FAD0C9;
+            line-height: 1.6;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FAD0C9;
+            padding: 0 30px;
+            height: 80px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #6E6E6D;
+            padding: 10px 25px;
+            background-color: #FAD0C9;
+            clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 50px;
+            color: #FAD0C9;
+        }
+
+        .tax-form {
+            background-color: #FAD0C9;
+            color: #6E6E6D;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            width: 90%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        input, button {
+            padding: 15px;
+            font-size: 1.2em;
+            margin: 10px 0;
+            border: 1px solid #6E6E6D;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #6E6E6D;
+            color: #FAD0C9;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FAD0C9;
+            color: #6E6E6D;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2C5F2D; /* Changed to Forest Green */
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 15px;
+            background-color: #6E6E6D;
+            color: #FAD0C9;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">ITC</div>
+    </header>
+
+    <h1>Income Tax Calculator</h1>
+    <p>Input your taxable income, and the program will calculate your income tax based on the provided tax brackets.</p>
+
+    <div class="tax-form">
+        <label for="income">Enter Your Taxable Income (in PHP):</label>
+        <input type="number" id="income" placeholder="Enter your income" />
+
+        <button onclick="calculateTax()">Calculate Tax</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateTax() {
+            const income = parseFloat(document.getElementById("income").value);
+            const resultElement = document.getElementById("result");
+            let tax = 0;
+
+            if (isNaN(income) || income < 0) {
+                resultElement.textContent = "Please enter a valid positive income.";
+                return;
+            }
+
+            if (income <= 250000) {
+                tax = 0;
+            } else if (income <= 400000) {
+                tax = (income - 250000) * 0.20;
+            } else if (income <= 800000) {
+                tax = 30000 + (income - 400000) * 0.25;
+            } else if (income <= 2000000) {
+                tax = 130000 + (income - 800000) * 0.30;
+            } else if (income <= 8000000) {
+                tax = 490000 + (income - 2000000) * 0.32;
+            } else {
+                tax = 2410000 + (income - 8000000) * 0.35;
+            }
+
+            resultElement.textContent = `Your Income Tax: PHP ${tax.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
