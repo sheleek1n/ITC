@@ -7,6 +7,8 @@
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
@@ -15,11 +17,16 @@
             background-color: #6E6E6D;
             color: #FAD0C9;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             text-align: center;
-            padding: 20px;
         }
 
         .navbar {
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -27,6 +34,8 @@
             padding: 0 30px;
             height: 100px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
         }
 
         .logo {
@@ -62,19 +71,18 @@
         }
 
         h1 {
-            font-size: 3em;
-            margin-top: 50px;
+            font-size: 2.5em;
             color: #FAD0C9;
+            margin-bottom: 20px;
         }
 
-        .container {
+        .container { 
             background-color: #FAD0C9;
             padding: 20px;
             border-radius: 10px;
             width: 80%;
             max-width: 500px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            
         }
 
         input {
@@ -86,8 +94,6 @@
             margin-bottom: 15px;
             background-color: #FAD0C9;
             color: #6E6E6D;
-            display: inline-block;
-            box-sizing: border-box;
         }
 
         button, .theme-button {
@@ -100,9 +106,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            display: inline-block;
             text-align: center;
-            text-decoration: none;
         }
 
         button:hover, .theme-button:hover {
@@ -159,18 +163,14 @@
             }
 
             let factorial = 1;
-            let i = 1;
-            while (i <= n) {
+            for (let i = 1; i <= n; i++) {
                 factorial *= i;
-                i++;
             }
 
             let sum = 0;
-            let j = 1;
-            do {
+            for (let j = 1; j <= n; j++) {
                 sum += j;
-                j++;
-            } while (j <= n);
+            }
 
             let average = sum / n;
 
